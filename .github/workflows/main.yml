@@ -2,7 +2,7 @@ name: Sr Barriga comes around
 
 on:
   schedule:
-    - cron: "*/44 * * * *"
+    - cron: "*/5 * * * *"
 
 jobs:
   execute:
@@ -15,7 +15,5 @@ jobs:
     
     runs-on: ubuntu-latest
     steps:
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-      - name: Run Sr Barriga
-        run: python app/main.py
+      - name: Install dependencies and run app
+        run: pip install -r requirements.txt && python app/main.py
