@@ -10,7 +10,8 @@ class Mongo:
     def get_group(self):
         return self.client.group.people.find()
 
-    #def get_transactions(self)
+    def get_transactions(self):
+        return self.client.group.extract.find()
 
     def create_transaction(self, transaction):
         return self.client.group.extract.insert_one(transaction)

@@ -10,7 +10,7 @@ def create_debt():
     spotify_value = float(getenv("SPOTIFY_VALUE", 34.90))
 
     users = __get_users(database_connection)
-
+    transactions = []
     spotify_value_by_user = round(spotify_value/(len(users) + 1), 2)
     for user in users:
         transaction = database_connection.create_transaction(
@@ -21,6 +21,9 @@ def create_debt():
                 user=user["name"],
                 user_id=user["id"]
             ))
+        transactions.append(transaction)
+
+    return users, transactions
 
 def __get_users(database: Mongo) -> List[Dict]:
     users = []
