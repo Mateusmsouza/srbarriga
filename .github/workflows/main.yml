@@ -2,18 +2,18 @@ name: Sr Barriga comes around
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "*/10 * * * *"
 
 jobs:
-  cron:
+  execute:
     env:
       MONGO_URI: ${{secrets.MONGO_URI}}
       SPOTIFY_VALUE: ${{secrets.SPOTIFY_VALUE}} 
       API_TELEGRAM: ${{secrets.API_TELEGRAM}} 
       BOT_KEY: ${{secrets.BOT_KEY}} 
       CHAT_ID: ${{secrets.CHAT_ID}}
+    
     runs-on: ubuntu-latest
-
     steps:
       - name: Install dependencies
         run: pip install -r requirements.txt
