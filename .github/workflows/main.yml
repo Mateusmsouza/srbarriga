@@ -2,7 +2,7 @@ name: Sr Barriga comes around
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "23 06 24 * *"
 
 jobs:
   execute:
