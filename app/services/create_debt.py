@@ -12,7 +12,7 @@ def create_debt():
 
     users = get_users(database_connection)
     transactions = []
-    spotify_value_by_user = round(spotify_value/(len(users) + 1), 2)
+    spotify_value_by_user = round(spotify_value / (len(users) + 1), 2)
     for user in users:
         transaction = database_connection.create_transaction(
             parse_transaction(
@@ -20,6 +20,7 @@ def create_debt():
                 type="DEBT",
                 description="Monthly charge by automation",
                 user=user["name"],
-                user_id=user["id"]
-            ))
+                user_id=user["id"],
+            )
+        )
         transactions.append(transaction)
