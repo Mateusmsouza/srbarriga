@@ -1,0 +1,27 @@
+version: '3.4'
+
+x-common: &common
+  labels:
+    app: srbarriga
+  networks:
+    - srbarriga
+
+services:
+
+  srbarriga:
+    <<: *common
+    build: .
+    container_name: srbarriga
+    environment:
+      MONGO_URI: mongo
+      SPOTIFY_VALUE: $SPOTIFY_VALUE
+    
+  mongo:
+    <<: *common
+    image: mongo
+    container_name: srbarriga-mongodb
+    ports:
+      - 27017:27017
+
+networks:
+  srbarriga:
