@@ -12,4 +12,7 @@ up-no-build:
 	docker-compose up -d
 
 run-charge:
-	docker-compose -f docker-compose.yml run srbarriga python3 app/main.py
+	python3 app/charger.py
+
+run-payment:
+	python3 app/payment.py 
