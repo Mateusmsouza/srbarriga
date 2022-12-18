@@ -3,19 +3,20 @@ from typing import Dict, List
 
 from data.database import Mongo
 from parser.transaction import parse_transaction
-from services.users import get_users
+from services.users import get_user_by_name
 
 
-def create_debt(user: str, value: float, description):
+def create_payment(name: str, value: float, description):
     database_connection = Mongo(getenv("MONGO_URI"))
 
-    users = get_users(database_connection)
+    user = get_user_by_name(
+        database_connection, name)
     
     transaction = database_connection.create_transaction(
         parse_transaction(
-            value=spotify_value_by_user,
-            type="DEBT",
-            description="Monthly charge by automation",
+            value=value,
+            type="CREDIT",
+            description=f"CI Payment Workflow: {description}",
             user=user["name"],
             user_id=user["id"],
         )

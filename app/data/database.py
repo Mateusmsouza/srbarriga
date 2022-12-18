@@ -8,6 +8,11 @@ class Mongo:
     def get_group(self):
         return self.client.group.people.find()
 
+    def get_user(self, name: str):
+        return self.client.group.people.find_one({
+            "name": name
+        })
+
     def get_transactions(self):
         return self.client.group.extract.find()
 

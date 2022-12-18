@@ -1,4 +1,6 @@
 import argparse
+from services.create_payment import create_payment
+from connections.send_message import send_message
 
 parser = argparse.ArgumentParser(
     prog="Sr Barriga Payment Workflow",
@@ -16,4 +18,9 @@ parser.add_argument(
 
 if __name__ == "__main__":
     args = parser.parse_args()
-    print(args)
+    create_payment(
+        args.user,
+        args.value,
+        args.description)
+    send_message(
+        f"Pagamento de {args.user} (R$ {args.value}) realizado :)")
