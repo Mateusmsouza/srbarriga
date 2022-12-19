@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  mongo:
+    image: mongo
+    container_name: srbarriga-mongodb
+    ports:
+      - 27017:27017
+    labels:
+      app: srbarriga
+    networks:
+      - srbarriga
+
+networks:
+  srbarriga:
