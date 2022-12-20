@@ -1,0 +1,25 @@
+name: Sr Barriga register user payment
+
+on:
+  issue_comment:
+    types:
+      - [submitted]
+
+jobs:
+  execute:
+    env:
+      MONGO_URI: ${{secrets.MONGO_URI}}
+      SPOTIFY_VALUE: ${{secrets.SPOTIFY_VALUE}} 
+      API_TELEGRAM: ${{secrets.API_TELEGRAM}} 
+      BOT_KEY: ${{secrets.BOT_KEY}} 
+      CHAT_ID: ${{secrets.CHAT_ID}}
+      PLAN_OWNER_EMAIL: ${{secrets.PLAN_OWNER_EMAIL}}
+    
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+    
+      - name: Run if we should register payment
+        run: pip install -r requirements.txt
