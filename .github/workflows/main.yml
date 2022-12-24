@@ -3,6 +3,7 @@ name: Sr Barriga comes around
 on:
   schedule:
     - cron: "23 06 24 * *"
+  workflow_dispatch:
 
 jobs:
   execute:
