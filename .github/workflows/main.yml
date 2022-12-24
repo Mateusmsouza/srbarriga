@@ -19,5 +19,8 @@ jobs:
         name: Checkout
         uses: actions/checkout@v2
     
-      - name: Install dependencies and run app
-        run: pip install -r requirements.txt && python app/main.py
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+        
+      - name: Sr Barriga charges everyone
+        run: make run-charge
