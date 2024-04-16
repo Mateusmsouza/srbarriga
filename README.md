@@ -19,6 +19,3 @@ Currently supported features are:
 - Charge monthly;
 - Payment register script;
 - Sends message on Telegram to remember the group.
-
-## Support Sr. Barriga
-<a href="https://www.buymeacoffee.com/msouza" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="170"></a>
