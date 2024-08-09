@@ -19,3 +19,4 @@ Currently supported features are:
 - Charge monthly;
 - Payment register script;
 - Sends message on Telegram to remember the group.
+
