@@ -20,3 +20,4 @@ Currently supported features are:
 - Payment register script;
 - Sends message on Telegram to remember the group.
 
+
